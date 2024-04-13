@@ -1,7 +1,13 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, create_engine
+from models import Base
 
+
+SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+
+engine_db = create_engine(SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine_db)
 
 # создаем асинхронный движок
 engine = create_async_engine("sqlite+aiosqlite:///tasks.db", echo=True)
