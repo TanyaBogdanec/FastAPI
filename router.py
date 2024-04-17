@@ -1,5 +1,4 @@
 from typing import Annotated
-
 from fastapi import APIRouter, HTTPException, Depends
 from repository import TaskRepository
 from schemas import STaskAdd, STask, STaskId

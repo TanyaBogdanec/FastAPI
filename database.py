@@ -1,7 +1,6 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy import Column, Integer, String, create_engine
-from models import Base
 
 
 SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
